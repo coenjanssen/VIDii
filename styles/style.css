@@ -3,18 +3,23 @@
 /*************/
 
 /* naar een idee van Jen Simmons */
-*, *::after, *::before {
-  box-sizing:border-box;  
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
 body {
-  margin:0;
+  margin: 0;
+  overflow: hidden;
+  background-color: #f2f2f2;
+  position: relative;
+  height: 100vh;
 }
 
 button:not([disabled]) {
-  cursor:pointer;
+  cursor: pointer;
 }
-
 
 
 
@@ -24,22 +29,413 @@ button:not([disabled]) {
 /*********************/
 
 :root {
-  --color-headings:crimson
+  --color-black: black;
+  --color-white: white;
+  --color-road: #FFFFFF;
+}
+
+/* Dark-mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-black: black;
+    --color-white: white;
+    --color-road: #1C1C1C;
+  }
 }
 
 
 
 
-
 /********************/
-/* ALGEMENE STYLING */
+/* ALGEMENE TEKST - STYLING */
 /********************/
 
 h1 {
-  color:var(--color-headings);
+  color: var(--color-white);
+}
+
+/********************/
+/* ALGEMENE LAYOUT - STYLING */
+/********************/
+
+
+
+body header {
+  display: flex;
+  justify-content: start;
+  padding: 30px;
+  gap: 1.5em;
+}
+
+body main > section {
+  position: fixed;
+  bottom: 0;
 }
 
 
-/* ... */
+ol {
+  --size-auto: 22vw;
+  --space-auto: 1vw;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+
+  display: grid;
+  grid-template-columns: repeat(3, var(--size-auto));
+  column-gap: var(--space-auto);
+
+  padding-left: calc((100vw - 3 * var(--size-auto) - 2 * var(--space-auto)) * .7);
+  background-color: var(--color-road);
+  border-radius: 50px 50px 0 0;
+
+  background-image:
+    repeating-linear-gradient(to right,
+      #f2f2f2 0% 20%,
+      transparent 20% 50%);
+
+  background-size: 20% 3%;
+  background-repeat: repeat-x;
+  background-position: center center;
+}
+
+ol li {
+  width: 100%;
+  display: block;
+
+  justify-self: center;
+  align-self: end;
+  padding-bottom: 2vw;
+}
+
+ol li button {
+  width: 100%;
+  display: block;
+
+  position: relative;
+
+  padding: 0;
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+ol li button img {
+  width: 100%;
+  display: block;
+}
 
 
+/* *************************************** */
+/* TRAFFIC LIGHT - TEXT
+/* *************************************** */
+
+article:nth-of-type(1) {
+  position: fixed;
+  right: 5vw;
+  bottom:30vw;
+  z-index:100;
+
+  display: flex;
+  justify-content: end;
+  flex-flow: row wrap;
+  gap:0.5vw;
+}
+
+
+
+
+
+/* *************************************** */
+/* TRAFFIC LIGHT - BUTTON
+/* *************************************** */
+
+
+article:nth-of-type(1) section:nth-of-type(1) {
+  background-color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1em 1em 1em 1em;
+  border: 1px solid #E9E8E8;
+  padding: 1vw;
+
+
+  display:grid;
+  column-gap: 0.5vw;
+  grid-template-columns: max-content max-content;
+}
+
+article:nth-of-type(1) section:nth-of-type(1) button {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+
+  padding: 0;
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  scale: 0.8;
+}
+
+article:nth-of-type(1) section:nth-of-type(1) h3 {
+  margin: 0;
+}
+
+article:nth-of-type(1) section:nth-of-type(1) p {
+  margin: 0;
+}
+
+
+article:nth-of-type(1) section:nth-of-type(2) {
+  background-color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  border-radius: 1em 1em 1em 1em;
+  border: 1px solid #E9E8E8;
+  padding: 1vw;
+
+}
+
+article:nth-of-type(1) section:nth-of-type(2) button:nth-of-type(1) {
+  color: transparent;
+  background: repeating-linear-gradient(#f2f2f2, #e2e2e2 5px);
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  border: none;
+}
+
+article:nth-of-type(1) section:nth-of-type(2) button:nth-of-type(2) {
+  color: transparent;
+  background: repeating-linear-gradient(#A4F455, #88d936 5px);
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  border: none;
+}
+
+
+/* --------------------------------------- */
+/* Car 1: BMW Isetta 1-door Cabriolet 1955 */
+/* --------------------------------------- */
+
+ol li:nth-of-type(1) {
+  width: 60%;
+}
+
+ol li:nth-of-type(1) button:hover {
+  filter: drop-shadow(0 0 .5em dodgerblue);
+}
+
+ol li:nth-of-type(1) button:active {
+  filter: drop-shadow(0 0 .5em var(--color-white));
+}
+
+ol li:nth-of-type(1) button img:nth-of-type(1) {
+  position: relative;
+  width: 100%;
+}
+
+ol li:nth-of-type(1) button img:nth-of-type(2) {
+  position: absolute;
+  right: 9.7%;
+  bottom: 2%;
+  width: 19%;
+  scale: 1.2;
+}
+
+
+/* --------------------------------- */
+/* Car 2: BMW Z1 (E30) Roadster 1989 */
+/* --------------------------------- */
+
+ol li:nth-of-type(2) {
+  width: 100%;
+}
+
+
+ol li:nth-of-type(2) button:hover {
+  filter: drop-shadow(0 0 .5em dodgerblue);
+}
+
+ol li:nth-of-type(2) button:active {
+  filter: drop-shadow(0 0 .5em var(--color-white));
+}
+
+ol li:nth-of-type(2) button img:nth-of-type(1) {
+  position: relative;
+  width: 100%;
+}
+
+ol li:nth-of-type(2) button img:nth-of-type(2) {
+  position: absolute;
+  left: 7.5%;
+  bottom: 1.5%;
+  width: 19%;
+}
+
+ol li:nth-of-type(2) button img:nth-of-type(3) {
+  position: absolute;
+  right: 8%;
+  bottom: 1.5%;
+  width: 19%;
+}
+
+/* ------------------------------------ */
+/* Car 3: BMW 3-Series (E46) Coupé 1997 */
+/* ------------------------------------ */
+
+ol li:nth-of-type(3) {
+  width: 95%;
+}
+
+ol li:nth-of-type(3) button:hover {
+  filter: drop-shadow(0 0 .5em dodgerblue);
+}
+
+ol li:nth-of-type(3) button:active {
+  filter: drop-shadow(0 0 .5em var(--color-white));
+}
+
+ol li:nth-of-type(3) button img:nth-of-type(1) {
+  position: relative;
+  width: 100%;
+}
+
+ol li:nth-of-type(3) button img:nth-of-type(2) {
+  position: absolute;
+  left: 12%;
+  bottom: 1%;
+  width: 19%;
+  scale: 1;
+}
+
+ol li:nth-of-type(3) button img:nth-of-type(3) {
+  position: absolute;
+  right: 4.5%;
+  bottom: 0%;
+  width: 19%;
+  scale: 0.95;
+}
+
+/* ----------------------------------------------- */
+/* Car 4: BMW 1-Series (E81) 3-door Hatchback 2007 */
+/* ----------------------------------------------- */
+
+ol li:nth-of-type(4) {
+  width: 90%;
+}
+
+ol li:nth-of-type(4) button:hover {
+  filter: drop-shadow(0 0 .5em dodgerblue);
+}
+
+ol li:nth-of-type(4) button:active {
+  filter: drop-shadow(0 0 .5em var(--color-white));
+}
+
+ol li:nth-of-type(4) button img:nth-of-type(1) {
+  position: relative;
+  width: 100%;
+}
+
+ol li:nth-of-type(4) button img:nth-of-type(2) {
+  position: absolute;
+  left: 7.3%;
+  bottom: 0%;
+  width: 19%;
+  scale: 0.89;
+}
+
+ol li:nth-of-type(4) button img:nth-of-type(3) {
+  position: absolute;
+  right: 5.7%;
+  bottom: 0%;
+  width: 19%;
+  scale: 0.89;
+}
+
+
+
+/* ------------------------------ */
+/* Car 5: BMW i8 (I12) Coupé 2014 */
+/* ------------------------------ */
+
+ol li:nth-of-type(5) {
+  width: 100%;
+}
+
+
+ol li:nth-of-type(5) button:hover {
+  filter: drop-shadow(0 0 .5em dodgerblue);
+}
+
+ol li:nth-of-type(5) button:active {
+  filter: drop-shadow(0 0 .5em var(--color-white));
+}
+
+ol li:nth-of-type(5) button img:nth-of-type(1) {
+  position: relative;
+  width: 100%;
+}
+
+ol li:nth-of-type(5) button img:nth-of-type(2) {
+  position: absolute;
+  left: 7%;
+  bottom: -1%;
+  width: 19%;
+  scale: 0.90;
+}
+
+ol li:nth-of-type(5) button img:nth-of-type(3) {
+  position: absolute;
+  right: 8%;
+  bottom: -1%;
+  width: 19%;
+  scale: 0.90;
+}
+
+
+/* ------------------------------------- */
+/* Car 6: BMW i4 M (I04) Liftback M 2021 */
+/* ------------------------------------- */
+
+ol li:nth-of-type(6) {
+  width: 100%;
+}
+
+
+ol li:nth-of-type(6) button:hover {
+  filter: drop-shadow(0 0 .5em dodgerblue);
+}
+
+ol li:nth-of-type(6) button:active {
+  filter: drop-shadow(0 0 .5em var(--color-white));
+}
+
+ol li:nth-of-type(6) button img:nth-of-type(1) {
+  position: relative;
+  width: 100%;
+}
+
+ol li:nth-of-type(6) button img:nth-of-type(2) {
+  position: absolute;
+  left: 10%;
+  bottom: 0%;
+  width: 19%;
+  scale: 0.9;
+}
+
+ol li:nth-of-type(6) button img:nth-of-type(3) {
+  position: absolute;
+  right: 6%;
+  bottom: 0%;
+  width: 19%;
+  scale: 0.9;
+}
