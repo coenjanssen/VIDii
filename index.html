@@ -10,6 +10,9 @@
 
 	<link href="styles/style.css" rel="stylesheet">
 	<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -31,8 +34,12 @@
 			</section>
 			<!-- Traffic Light (button)-->
 			<section>
-				<button>start</button>
-				<button>stop</button>
+				<!-- <button>start</button> -->
+				<input type="radio" name="TrafficLight" id="Green" value="Green">
+				<label for="Green" aria-label="Green Light"></label>
+				<!-- <button>stop</button> -->
+				<input type="radio" name="TrafficLight" id="Red" value="Red" checked>
+				<label for="Red" aria-label="Red Light"></label>
 			</section>
 		
 		</article>
@@ -43,14 +50,14 @@
 				<!-- Car 1: BMW Isetta 1-door Cabriolet 1955 -->
 				<li>
 					<button>
-						<img src="./images/cars/1955 /1955-car.png" alt="">
+						<img class="auto" src="./images/cars/1955 /1955-car.png" alt="">
 						<img src="./images/cars/1955 /1955-wheel-f.png" alt="">
 					</button>
 				</li>
 				<!-- Car 2: BMW Z1 (E30) Roadster 1989 -->
 				<li>
 					<button>
-						<img src="./images/cars/1989/1989-car.png" alt="">
+						<img class="auto" src="./images/cars/1989/1989-car.png" alt="">
 						<img src="./images/cars/1989/1989-wheel-f.png" alt="">
 						<img src="./images/cars/1989/1989-wheel-b.png" alt="">
 					</button>
@@ -58,7 +65,7 @@
 				<!-- Car 3: BMW 3-Series (E46) Coupé 1997 -->
 				<li>
 					<button>
-						<img src="./images/cars/1997/1997-car.png" alt="">
+						<img class="auto" src="./images/cars/1997/1997-car.png" alt="">
 						<img src="./images/cars/1997/1997-wheel-f.png" alt="">
 						<img src="./images/cars/1997/1997-wheel-b.png" alt="">
 					</button>
@@ -66,7 +73,7 @@
 				<!-- Car 4: BMW 1-Series (E81) 3-door Hatchback 2007 -->
 				<li>
 					<button>
-						<img src="./images/cars/2007/2007-car.png" alt="">
+						<img class="auto" src="./images/cars/2007/2007-car.png" alt="">
 						<img src="./images/cars/2007/2007-wheel-f.png" alt="">
 						<img src="./images/cars/2007/2007-wheel-b.png" alt="">
 					</button>
@@ -74,7 +81,7 @@
 				<!-- Car 5: BMW i8 (I12) Coupé 2014 -->			
 				<li>
 					<button>
-						<img src="./images/cars/2014/2014-car.png" alt="">
+						<img class="auto" src="./images/cars/2014/2014-car.png" alt="">
 						<img src="./images/cars/2014/2014-wheel-f.png" alt="">
 						<img src="./images/cars/2014/2014-wheel-b.png" alt="">
 					</button>
@@ -82,7 +89,7 @@
 				<!-- Car 6: BMW i4 M (I04) Liftback M 2021 -->
 				<li>
 					<button>
-						<img src="./images/cars/2021/2021-car.png" alt="">
+						<img class="auto" src="./images/cars/2021/2021-car.png" alt="">
 						<img src="./images/cars/2021/2021-wheel-f.png" alt="">
 						<img src="./images/cars/2021/2021-wheel-b.png" alt="">
 					</button>

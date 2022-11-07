@@ -1,3 +1,6 @@
+
+
+
 /*************/
 /* CSS RESET */
 /*************/
@@ -51,7 +54,19 @@ button:not([disabled]) {
 /********************/
 
 h1 {
-  color: var(--color-white);
+  font-family: 'Inter', sans-serif;
+}
+
+h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.7em;
 }
 
 /********************/
@@ -67,7 +82,7 @@ body header {
   gap: 1.5em;
 }
 
-body main > section {
+body main>section {
   position: fixed;
   bottom: 0;
 }
@@ -128,6 +143,7 @@ ol li button img {
 }
 
 
+
 /* *************************************** */
 /* TRAFFIC LIGHT - TEXT
 /* *************************************** */
@@ -135,16 +151,20 @@ ol li button img {
 article:nth-of-type(1) {
   position: fixed;
   right: 5vw;
-  bottom:30vw;
-  z-index:100;
+  bottom: 30vw;
+  z-index: 100;
 
   display: flex;
   justify-content: end;
   flex-flow: row wrap;
-  gap:0.5vw;
+  gap: 0.5vw;
 }
 
+/* PLAY - PAUSE BUTTON */
 
+main article section button img.PlayPause {
+  content:url("../images/icons/pause.svg");
+}
 
 
 
@@ -160,11 +180,11 @@ article:nth-of-type(1) section:nth-of-type(1) {
   align-items: center;
   border-radius: 1em 1em 1em 1em;
   border: 1px solid #E9E8E8;
-  padding: 1vw;
+  padding: 1vw 2vw 1vw 1vw;
 
 
-  display:grid;
-  column-gap: 0.5vw;
+  display: grid;
+  column-gap: 1vw;
   grid-template-columns: max-content max-content;
 }
 
@@ -199,26 +219,44 @@ article:nth-of-type(1) section:nth-of-type(2) {
   border-radius: 1em 1em 1em 1em;
   border: 1px solid #E9E8E8;
   padding: 1vw;
-
 }
 
-article:nth-of-type(1) section:nth-of-type(2) button:nth-of-type(1) {
-  color: transparent;
+input {
+  position: fixed;
+  left:-9999em;
+  /* Inmiddels rond Amstelveen, mocht van Sanne. */
+}
+
+label {
+  display:block;
+	height:3em;
+	aspect-ratio:1/1;
+	border-radius:50%;
   background: repeating-linear-gradient(#f2f2f2, #e2e2e2 5px);
-  height: 3em;
-  width: 3em;
-  border-radius: 50%;
-  border: none;
+  cursor: pointer;
 }
 
-article:nth-of-type(1) section:nth-of-type(2) button:nth-of-type(2) {
-  color: transparent;
-  background: repeating-linear-gradient(#A4F455, #88d936 5px);
-  height: 3em;
-  width: 3em;
-  border-radius: 50%;
-  border: none;
+input#Green:checked + label {
+  background: repeating-linear-gradient(#A4F455, #7fc43b 5px);
 }
+
+input#Red:checked + label {
+  background: repeating-linear-gradient(#f45555, #ce4141 5px);
+}
+
+
+
+/* JS - TRAFFIC LIGHT */ 
+
+/* article:nth-of-type(1) section:nth-of-type(2) button:nth-of-type(1).GreenLight {
+  background: repeating-linear-gradient(#A4F455, #7fc43b 5px);
+}
+
+article:nth-of-type(1) section:nth-of-type(2) button:nth-of-type(2).RedLight {
+  background: repeating-linear-gradient(#f45555, #ce4141 5px);
+} */
+
+
 
 
 /* --------------------------------------- */
@@ -287,6 +325,8 @@ ol li:nth-of-type(2) button img:nth-of-type(3) {
   width: 19%;
 }
 
+
+
 /* ------------------------------------ */
 /* Car 3: BMW 3-Series (E46) Coupé 1997 */
 /* ------------------------------------ */
@@ -324,6 +364,10 @@ ol li:nth-of-type(3) button img:nth-of-type(3) {
   scale: 0.95;
 }
 
+
+
+
+
 /* ----------------------------------------------- */
 /* Car 4: BMW 1-Series (E81) 3-door Hatchback 2007 */
 /* ----------------------------------------------- */
@@ -360,6 +404,8 @@ ol li:nth-of-type(4) button img:nth-of-type(3) {
   width: 19%;
   scale: 0.89;
 }
+
+
 
 
 
@@ -402,6 +448,7 @@ ol li:nth-of-type(5) button img:nth-of-type(3) {
 }
 
 
+
 /* ------------------------------------- */
 /* Car 6: BMW i4 M (I04) Liftback M 2021 */
 /* ------------------------------------- */
@@ -438,4 +485,131 @@ ol li:nth-of-type(6) button img:nth-of-type(3) {
   bottom: 0%;
   width: 19%;
   scale: 0.9;
+}
+
+
+
+
+
+/* ---------------- */
+/* CAR ANIMATIONS   */
+/* ---------------- */
+
+ol li button {
+  animation-name:driving;
+  animation-duration:4s;
+  animation-iteration-count:infinite;
+  animation-timing-function:linear;
+  animation-play-state:paused; /* de animatie staat op pauze */
+}
+
+ol li button.play img:nth-of-type(2),
+ol li button.play img:nth-of-type(3) {
+  animation-name:rotating;
+  animation-duration:1.25s;
+  animation-iteration-count:infinite;
+  animation-timing-function:linear;
+  /* animation-play-state:paused;  */
+  /* de animatie staat op pauze */
+}
+
+/* Animation: car 1 */ 
+ol li:nth-of-type(1) button {
+  animation-delay: 2.2s;
+}
+
+ol li:nth-of-type(1) button img:nth-of-type(2) {
+  animation-delay: 2.2s;
+}
+
+/* Animation: car 2 */ 
+ol li:nth-of-type(2) button {
+  animation-delay: 1.2s;
+}
+
+ol li:nth-of-type(2) button img:nth-of-type(2),
+ol li:nth-of-type(2) button img:nth-of-type(3) {
+  animation-delay: 1.2s;
+}
+
+/* Animation: car 3 */ 
+ol li:nth-of-type(3) button {
+  animation-delay: 0.2s;
+}
+
+ol li:nth-of-type(3) button img:nth-of-type(2),
+ol li:nth-of-type(3) button img:nth-of-type(3) {
+  animation-delay: 0.2s;
+}
+
+/* Animation: car 4 */ 
+ol li:nth-of-type(4) button {
+  animation-delay: 2s;
+}
+
+ol li:nth-of-type(4) button img:nth-of-type(2),
+ol li:nth-of-type(4) button img:nth-of-type(3) {
+  animation-delay: 2s;
+}
+
+/* Animation: car 5 */ 
+ol li:nth-of-type(5) button {
+  animation-delay: 1s;
+}
+
+ol li:nth-of-type(5) button img:nth-of-type(2),
+ol li:nth-of-type(5) button img:nth-of-type(3) {
+  animation-delay: 1s;
+}
+
+/* Animation: car 6 */ 
+ol li:nth-of-type(6) button {
+  animation-delay: 0s;
+}
+
+ol li:nth-of-type(6) button img:nth-of-type(2),
+ol li:nth-of-type(6) button img:nth-of-type(3) {
+  animation-delay: 0s;
+}
+
+/* Play animations */
+.play {
+  animation-play-state: running;
+}
+
+
+@keyframes driving {
+  0% {
+    margin-left: 0vw;
+  }
+
+  50% {
+    margin-left: 100vw;
+    opacity: 1;
+  }
+
+  51% {
+    margin-left: 100vw;
+    opacity: 0;
+  }
+
+  59% {
+    margin-left: -100vw;
+    opacity: 0;
+  }
+
+  60% {
+    margin-left: -100vw;
+    opacity: 1;
+  }
+
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
