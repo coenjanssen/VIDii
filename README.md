@@ -47,28 +47,35 @@ Mijn startniveau voor de opstart van de website is in eerste instantie blauw, di
 
   #### Design 1:
   <img src="readme-images/versie1.png" width="375px" alt="Eerste digitale uitwerking">
-  Om een beter beeld te krijger hoe de website eruit komt te zien, heb ik de schets ook digitaal gemaakt. 
+  
+  ##### Om een beter beeld te krijger hoe de website eruit komt te zien, heb ik de schets ook digitaal gemaakt. 
 
   #### Testen:
   <img src="readme-images/test.png" width="375px" alt="Testen in CodePen">
-  Het idee is helder, maar gaat het mij lukken om alles werkend te krijgen - zoals ik het in gedachten heb? Hiervoor ben ik eerst gaan testen in Codepen.
+  
+  ##### Het idee is helder, maar gaat het mij lukken om alles werkend te krijgen - zoals ik het in gedachten heb? Hiervoor ben ik eerst gaan testen in Codepen.
 
   #### Design 2:
   <img src="readme-images/versie2.png" width="375px" alt="Tweede digitale uitwerking">
-  Ik was wat aan het stoeien met de stijl: de auto's zijn realistisch de achtegrond wat cartoonish, dit botst teveel vond ik. Hier heb ik een kleine aanpassing gedaan om de weg wat realitscher te maken.
+  
+  ##### Ik was wat aan het stoeien met de stijl: de auto's zijn realistisch de achtegrond wat cartoonish, dit botst teveel vond ik. Hier heb ik een kleine aanpassing gedaan om de weg wat realitscher te maken.
 
   #### Design 3A (Light):
   <img src="readme-images/versie3-light.png" width="375px" alt="Ontwerp in lightmode (schets / wireframe)">
-  Terug naar de tekentafel om het ontwerp simpeler te maken, hierbij heb ik rekening gehouden met de eenvoud om zowel voor light- als darkmode te kunnen ontwerpen. De simpelheid is gebaseerd om de minimalistische en schone showrooms van de autodealer.
+  
+  
+  ##### Terug naar de tekentafel om het ontwerp simpeler te maken, hierbij heb ik rekening gehouden met de eenvoud om zowel voor light- als darkmode te kunnen ontwerpen. De simpelheid is gebaseerd om de minimalistische en schone showrooms van de autodealer.
   
 
   #### Design 3B (Dark):
   <img src="readme-images/versie3-dark.png" width="375px" alt="Ontwerp in darkmode (schets / wireframe)">
-  Naast de light-mode werkt de website ook met een donkere modus aan.
+
+  ##### Naast de light-mode werkt de website ook met een donkere modus aan.
 
   #### Clean up!:
   <img src="readme-images/clean-up.png" width="375px" alt="Opschonen van de code">
-  Aan het eind ben ik de code gaan opschonen en het overzichtelijk maken van alle code.
+
+  ##### Aan het eind ben ik de code gaan opschonen en het overzichtelijk maken van alle code.
 
 </details>
 
