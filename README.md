@@ -43,7 +43,7 @@ Mijn startniveau voor de opstart van de website is in eerste instantie blauw, di
   Om een beter beeld te krijger hoe de website eruit komt te zien, heb ik de schets ook digitaal gemaakt. 
 
   #### Testen:
-  <img src="readme-images/test.png" width="375px" alt="Testen in CodePen">
+  <img src="readme-images/codepen.png" width="375px" alt="Testen in CodePen">
   
   Het idee is helder, maar gaat het mij lukken om alles werkend te krijgen - zoals ik het in gedachten heb? Hiervoor ben ik eerst gaan testen in Codepen.
 
