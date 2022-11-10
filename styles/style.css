@@ -1,615 +1,1093 @@
+/* ▒▒▒▒▒▒▒▒▒▒ CSS RESET                                 ▒▒▒▒▒▒▒▒▒▒ */
+/* Naar een idee van Jen Simmons                                    */
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
 
 
-
-/*************/
-/* CSS RESET */
-/*************/
-
-/* naar een idee van Jen Simmons */
 *,
 *::after,
 *::before {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
+
+
+
+
+
+/* ▒▒▒▒▒▒▒▒▒▒ GENERAL                                   ▒▒▒▒▒▒▒▒▒▒ */
+
+
 body {
-  margin: 0;
-  overflow: hidden;
-  background-color: #f2f2f2;
-  position: relative;
-  height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-color: var(--color-background);
+    position: relative;
+    height: 100vh;
 }
 
 button:not([disabled]) {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 
 
 
-/*********************/
-/* CUSTOM PROPERTIES */
-/*********************/
+
+
+/* ▒▒▒▒▒▒▒▒▒▒ CUSTOM PROPERTIES                         ▒▒▒▒▒▒▒▒▒▒ */
+
 
 :root {
-  --color-black: black;
-  --color-white: white;
-  --color-road: #FFFFFF;
-}
 
-/* Dark-mode */
-@media (prefers-color-scheme: dark) {
-  :root {
+
+    /* Appearance: Light  */
+    /* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
+
+    /* General */
     --color-black: black;
     --color-white: white;
-    --color-road: #1C1C1C;
-  }
+    --color-bmw-blue: #0066B1;
+    --color-bmw-darkblue: #003D78;
+    --color-bmw-red: #E22718;
+
+    /* Background */
+    --color-background: #F2F2F2;
+    --color-road: #FFFFFF;
+    --color-stroke: #E9E8E8;
+
+    /* Text */
+    --text-full: #1C1C1C;
+    --text-light: #323232;
+
+    /* Filters (Bron: https://stackoverflow.com/questions/22252472/how-to-change-the-color-of-an-svg-element) */
+    --filter-svg: none;
+
+    /* Gradients */
+    --gradient-light-gray: repeating-linear-gradient(#f2f2f2, #e2e2e2 5px);
+    --gradient-light-green: repeating-linear-gradient(#A4F455, #7fc43b 5px);
+    --gradient-light-red: repeating-linear-gradient(#f45555, #ce4141 5px);
+
+}
+
+
+/* Appearance: Dark   */
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* General */
+        --color-black: black;
+        --color-white: white;
+        --color-bmw-blue: #0066B1;
+        --color-bmw-darkblue: #003D78;
+        --color-bmw-red: #E22718;
+
+        /* Background */
+        --color-background: #323232;
+        --color-road: #1C1C1C;
+        --color-stroke: #4E4E4E;
+
+        /* Text */
+        --text-full: #FFFFFF;
+        --text-light: #F2F2F2;
+
+        /* Filters (Bron: https://stackoverflow.com/questions/22252472/how-to-change-the-color-of-an-svg-element) */
+        --filter-svg: invert(100%);
+
+        /* Gradients */
+        --gradient-light-gray: repeating-linear-gradient(#3a3a3a, #171717 5px);
+        --gradient-light-green: repeating-linear-gradient(#A4F455, #7fc43b 5px);
+        --gradient-light-red: repeating-linear-gradient(#f45555, #ce4141 5px);
+    }
 }
 
 
 
 
-/********************/
-/* ALGEMENE TEKST - STYLING */
-/********************/
+
+
+/* ▒▒▒▒▒▒▒▒▒▒ TEXT- STYLING                             ▒▒▒▒▒▒▒▒▒▒ */
+
 
 h1 {
-  font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-full);
 }
 
 h3 {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.2em;
-  font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--text-full);
+    margin: 0 0 0.5em 0;
+}
+
+h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--text-light);
+    margin: 0 0 0.5em 0;
 }
 
 p {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 0.7em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.8em;
+    color: var(--text-light);
 }
 
-/********************/
-/* ALGEMENE LAYOUT - STYLING */
-/********************/
 
+
+
+
+
+/* ▒▒▒▒▒▒▒▒▒▒ LAYOUT - STYLING                          ▒▒▒▒▒▒▒▒▒▒ */
 
 
 body header {
-  display: flex;
-  justify-content: start;
-  padding: 30px;
-  gap: 1.5em;
+    display: flex;
+    justify-content: start;
+    padding: 30px;
+    gap: 1.5em;
 }
 
 body main>section {
-  position: fixed;
-  bottom: 0;
+    position: fixed;
+    bottom: 0;
 }
+
 
 
 ol {
-  --size-auto: 22vw;
-  --space-auto: 1vw;
+    --size-auto: 22vw;
+    --space-auto: 1vw;
 
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 100vw;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
 
-  display: grid;
-  grid-template-columns: repeat(3, var(--size-auto));
-  column-gap: var(--space-auto);
+    display: grid;
+    grid-template-columns: repeat(3, var(--size-auto));
+    column-gap: var(--space-auto);
 
-  padding-left: calc((100vw - 3 * var(--size-auto) - 2 * var(--space-auto)) * .7);
-  background-color: var(--color-road);
-  border-radius: 50px 50px 0 0;
+    padding-left: calc((100vw - 3 * var(--size-auto) - 2 * var(--space-auto)) * .7);
+    background-color: var(--color-road);
+    border-radius: 50px 50px 0 0;
 
-  background-image:
-    repeating-linear-gradient(to right,
-      #f2f2f2 0% 20%,
-      transparent 20% 50%);
+    background-image:
+        repeating-linear-gradient(to right,
+            var(--color-background) 0% 20%,
+            transparent 20% 50%);
 
-  background-size: 20% 3%;
-  background-repeat: repeat-x;
-  background-position: center center;
+    background-size: 20% 3%;
+    background-repeat: repeat-x;
+    background-position: center center;
 }
 
 ol li {
-  width: 100%;
-  display: block;
+    width: 100%;
+    display: block;
 
-  justify-self: center;
-  align-self: end;
-  padding-bottom: 2vw;
+    justify-self: center;
+    align-self: end;
+    padding-bottom: 2vw;
 }
 
 ol li button {
-  width: 100%;
-  display: block;
+    width: 100%;
+    display: block;
 
-  position: relative;
+    position: relative;
 
-  padding: 0;
-  appearance: none;
-  background: none;
-  border: none;
-  outline: none;
+    padding: 0;
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
 }
 
 ol li button img {
-  width: 100%;
-  display: block;
+    width: 100%;
+    display: block;
 }
 
 
 
-/* *************************************** */
-/* TRAFFIC LIGHT - TEXT
-/* *************************************** */
 
-article:nth-of-type(1) {
-  position: fixed;
-  right: 5vw;
-  bottom: 30vw;
-  z-index: 100;
 
-  display: flex;
-  justify-content: end;
-  flex-flow: row wrap;
-  gap: 0.5vw;
+
+/* ▒▒▒▒▒▒▒▒▒▒ DIALOG - STYLING                          ▒▒▒▒▒▒▒▒▒▒ */
+
+
+#dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.7)
 }
 
-/* PLAY - PAUSE BUTTON */
-
-main article section button img.PlayPause {
-  content:url("../images/icons/pause.svg");
+dialog {
+    background-color: var(--color-road);
+    border: 1px solid var(--color-stroke);
+    border-radius: 1em;
+    padding: 1.5em 2em;
+    width: 30vw;
 }
 
-
-
-/* *************************************** */
-/* TRAFFIC LIGHT - BUTTON
-/* *************************************** */
-
-
-article:nth-of-type(1) section:nth-of-type(1) {
-  background-color: var(--color-white);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1em 1em 1em 1em;
-  border: 1px solid #E9E8E8;
-  padding: 1vw 2vw 1vw 1vw;
-
-
-  display: grid;
-  column-gap: 1vw;
-  grid-template-columns: max-content max-content;
+dialog h3 {
+    margin: 0 0 0.8em 0;
 }
 
-article:nth-of-type(1) section:nth-of-type(1) button {
-  grid-column-start: 1;
-  grid-row-start: 1;
-  grid-row-end: 3;
-
-  padding: 0;
-  appearance: none;
-  background: none;
-  border: none;
-  outline: none;
-  scale: 0.8;
+dialog h4 {
+    margin: 0 0 1.5em 0;
+    color: var(--text-light);
+    line-height: 1.5em;
 }
 
-article:nth-of-type(1) section:nth-of-type(1) h3 {
-  margin: 0;
+dialog button {
+    background-color: var(--color-road);
+    border: 1px solid var(--color-stroke);
+    border-radius: 1em;
+    padding: 1em;
+    color: var(--text-full);
+    font-weight: 600;
 }
 
-article:nth-of-type(1) section:nth-of-type(1) p {
-  margin: 0;
+dialog button:hover {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-stroke);
+    border-radius: 1em;
+    padding: 1em;
 }
 
 
-article:nth-of-type(1) section:nth-of-type(2) {
-  background-color: var(--color-white);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5em;
-  border-radius: 1em 1em 1em 1em;
-  border: 1px solid #E9E8E8;
-  padding: 1vw;
+
+
+
+
+/* ▒▒▒▒▒▒▒▒▒▒ STYLING: TRAFFIC LIGHT (BLOCK 1: TEXT)    ▒▒▒▒▒▒▒▒▒▒ */
+
+
+article:nth-of-type(2) {
+    position: fixed;
+    right: 5vw;
+    bottom: 30vw;
+    z-index: 100;
+
+    display: flex;
+    justify-content: end;
+    flex-flow: row wrap;
+    gap: 0.5vw;
 }
+
+
+/* PLAY - PAUSE ICON */
+
+main article:nth-of-type(2) section button.pause img {
+    content: url("../images/icons/pause.svg");
+}
+
+main article:nth-of-type(2) section button.pause img:hover {
+    scale: 1.2;
+    transition: .5s;
+}
+
+body main article:nth-of-type(2) section button {
+    filter: var(--filter-svg)
+}
+
+
+
+
+
+
+/* ▒▒▒▒▒▒▒▒▒▒ STYLING: TRAFFIC LIGHT (BLOCK 2: BUTTON)  ▒▒▒▒▒▒▒▒▒▒ */
+
+
+article:nth-of-type(2) section:nth-of-type(1) {
+    background-color: var(--color-road);
+    border-radius: 1em 1em 1em 1em;
+    border: 1px solid var(--color-stroke);
+    padding: 1vw 2vw 1vw 1vw;
+
+
+    display: grid;
+    column-gap: 1vw;
+    grid-template-columns: max-content max-content;
+}
+
+article:nth-of-type(2) section:nth-of-type(1) button {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    padding: 0;
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+    scale: 0.8;
+}
+
+
+article:nth-of-type(2) section:nth-of-type(1) h3 {
+    margin: 0;
+}
+
+article:nth-of-type(2) section:nth-of-type(1) p {
+    margin: 0;
+}
+
+
+article:nth-of-type(2) section:nth-of-type(2) {
+    background-color: var(--color-road);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    border-radius: 1em 1em 1em 1em;
+    border: 1px solid var(--color-stroke);
+    padding: 1vw;
+}
+
 
 input {
-  position: fixed;
-  left:-9999em;
-  /* Inmiddels rond Amstelveen, mocht van Sanne. */
+    position: fixed;
+    left: -9999em;
+    /* Inmiddels rond Amstelveen, mocht van Sanne. */
 }
+
 
 label {
-  display:block;
-	height:3em;
-	aspect-ratio:1/1;
-	border-radius:50%;
-  background: repeating-linear-gradient(#f2f2f2, #e2e2e2 5px);
-  cursor: pointer;
-}
-
-input#Green:checked + label {
-  background: repeating-linear-gradient(#A4F455, #7fc43b 5px);
-}
-
-input#Red:checked + label {
-  background: repeating-linear-gradient(#f45555, #ce4141 5px);
+    display: block;
+    height: 3em;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: var(--gradient-light-gray);
+    cursor: pointer;
 }
 
 
-
-/* JS - TRAFFIC LIGHT */ 
-
-/* article:nth-of-type(1) section:nth-of-type(2) button:nth-of-type(1).GreenLight {
-  background: repeating-linear-gradient(#A4F455, #7fc43b 5px);
+input#Green:checked+label {
+    background: var(--gradient-light-green)
 }
 
-article:nth-of-type(1) section:nth-of-type(2) button:nth-of-type(2).RedLight {
-  background: repeating-linear-gradient(#f45555, #ce4141 5px);
-} */
+input#Red:checked+label {
+    background: var(--gradient-light-red)
+}
 
 
 
 
-/* --------------------------------------- */
-/* Car 1: BMW Isetta 1-door Cabriolet 1955 */
-/* --------------------------------------- */
+
+
+/* ▒▒▒▒▒▒▒▒▒▒ STYLING: CAR LIGHT                        ▒▒▒▒▒▒▒▒▒▒ */
+
+
+article:nth-of-type(2) section:nth-of-type(3) {
+    background-color: var(--color-road);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    border-radius: 1em 1em 1em 1em;
+    border: 1px solid var(--color-stroke);
+    padding: 1vw 1.5vw;
+    order: -1;
+}
+
+article:nth-of-type(2) section:nth-of-type(3) button {
+    padding: 0;
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+main article:nth-of-type(2) section:nth-of-type(3) button img:hover {
+    scale: 1.2;
+    transition: .5s;
+}
+
+main article:nth-of-type(2) section:nth-of-type(3) button.active img {
+    content: url("../images/icons/headlight-on.svg");
+}
+
+
+/* ▒▒▒▒▒▒▒▒▒▒ STYLING: CAR LIGHTS ON/OFF                ▒▒▒▒▒▒▒▒▒▒ */
+
+
+/* CAR 1: Isetta                     */
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
+
+ol li:nth-of-type(1) button img:nth-of-type(1).light1 {
+    content: url("../images/cars/1955/1955-car-light.png");
+}
+
+/* Hover Effect */
+ol li:nth-of-type(1) button img:nth-of-type(1):hover {
+    content: url("../images/cars/1955/1955-car-confetti.png");
+}
+
+
+/* CAR 2: Z1 (Roadster)              */
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
+
+ol li:nth-of-type(2) button img:nth-of-type(1).light2 {
+    content: url("../images/cars/1989/1989-car-light.png");
+}
+
+
+/* CAR 3: 3-Serie Coupé              */
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
+
+ol li:nth-of-type(3) button img:nth-of-type(1).light3 {
+    content: url("../images/cars/1997/bmw-3-1997-light.png");
+}
+
+
+/* CAR 4: 1-Serie Hatchback          */
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
+
+ol li:nth-of-type(4) button img:nth-of-type(1).light4 {
+    content: url("../images/cars/2007/2007-car-light.png");
+}
+
+
+/* CAR 5: i8 (i12) Coupé             */
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
+
+ol li:nth-of-type(5) button img:nth-of-type(1).light5 {
+    content: url("../images/cars/2014/2014-car-light.png");
+}
+
+
+/* CAR 6: i4 M (I04) Liftback        */
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
+
+ol li:nth-of-type(6) button img:nth-of-type(1).light6 {
+    content: url("../images/cars/2021/2021-car-light.png");
+}
+
+
+
+
+
+
+/* ▒▒▒▒▒▒▒▒▒▒ STYLING: FLASH LIGHT                      ▒▒▒▒▒▒▒▒▒▒ */
+
+
+article:nth-of-type(2) section:nth-of-type(4) {
+    background-color: var(--color-road);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    border-radius: 1em 1em 1em 1em;
+    border: 1px solid var(--color-stroke);
+    padding: 1vw 1.5vw;
+    order: -2;
+}
+
+article:nth-of-type(2) section:nth-of-type(4) button {
+    padding: 0;
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+article:nth-of-type(2) section:nth-of-type(4) button img:hover {
+    scale: 1.2;
+    transition: .5s;
+}
+
+
+
+
+/* ▒▒▒▒▒▒▒▒▒▒ STYLING: HORN SOUND                       ▒▒▒▒▒▒▒▒▒▒ */
+
+
+article:nth-of-type(2) section:nth-of-type(5) {
+    background-color: var(--color-road);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    border-radius: 1em 1em 1em 1em;
+    border: 1px solid var(--color-stroke);
+    padding: 1vw 1.5vw;
+    order: -1;
+}
+
+article:nth-of-type(2) section:nth-of-type(5) button {
+    padding: 0;
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+article:nth-of-type(2) section:nth-of-type(5) button img:hover {
+    scale: 1.2;
+    transition: .5s;
+}
+
+
+
+
+
+
+/* ▒▒▒▒▒▒▒▒▒▒ STYLING: CAR INFORMATION                  ▒▒▒▒▒▒▒▒▒▒ */
+
+
+main article:nth-of-type(1) {
+    display: grid;
+    grid-template-columns: max-content max-content 1fr;
+    width: 50em;
+    grid-template-rows: max-content max-content max-content max-content;
+    padding: 0vw 0vw 0vw 7.2vw;
+    column-gap: 3vw;
+}
+
+main article:nth-of-type(1) h3 {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin: 0 0 1em 0;
+}
+
+main article:nth-of-type(1) h3:not([data-jaar=""])::after {
+    content: attr(data-jaar);
+    display: block;
+    background-color: var(--color-road);
+    padding: 0.5em;
+    font-size: 0.8em;
+    order: 2;
+    border-radius: 0.3em;
+    border: 1px solid var(--color-stroke);
+}
+
+main article:nth-of-type(1) h3:not([data-soort=""])::before {
+    content: attr(data-soort);
+    display: block;
+    background-color: var(--color-road);
+    padding: 0.5em;
+    font-size: 0.8em;
+    order: 1;
+    border-radius: 0.3em;
+    border: 1px solid var(--color-stroke);
+}
+
+
+main article:nth-of-type(1) h4 {
+    grid-column: 1 / -1;
+    margin: 0 0 3em 0;
+}
+
+main article:nth-of-type(1) p:nth-of-type(1) {
+    grid-column-start: 1;
+    grid-row-start: 3;
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.5em;
+    color: var(--text-light);
+    margin-bottom: 0.3em;
+}
+
+main article:nth-of-type(1) p:nth-of-type(2) {
+    grid-column-start: 1;
+    grid-row-start: 4;
+    margin: 0;
+}
+
+main article:nth-of-type(1) p:nth-of-type(3) {
+    grid-column-start: 2;
+    grid-row-start: 3;
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 0.3em;
+}
+
+main article:nth-of-type(1) p:nth-of-type(4) {
+    grid-column-start: 2;
+    grid-row-start: 4;
+    margin: 0;
+}
+
+main article:nth-of-type(1) p:nth-of-type(5) {
+    grid-column-start: 3;
+    grid-row-start: 3;
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 0.3em;
+}
+
+main article:nth-of-type(1) p:nth-of-type(6) {
+    grid-column-start: 3;
+    grid-row-start: 4;
+    margin: 0;
+}
+
+
+
+
+
+
+/* ▒▒▒▒▒▒▒▒▒▒ STYLING: CAR 1: Isetta                    ▒▒▒▒▒▒▒▒▒▒ */
+
 
 ol li:nth-of-type(1) {
-  width: 60%;
+    width: 60%;
 }
 
+
 ol li:nth-of-type(1) button:hover {
-  filter: drop-shadow(0 0 .5em dodgerblue);
+    filter: drop-shadow(0 0 .5em var(--color-bmw-blue));
 }
 
 ol li:nth-of-type(1) button:active {
-  filter: drop-shadow(0 0 .5em var(--color-white));
+    filter: drop-shadow(0 0 .5em var(--color-white));
 }
 
 ol li:nth-of-type(1) button img:nth-of-type(1) {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 }
 
 ol li:nth-of-type(1) button img:nth-of-type(2) {
-  position: absolute;
-  right: 9.7%;
-  bottom: 2%;
-  width: 19%;
-  scale: 1.2;
+    position: absolute;
+    right: 9.7%;
+    bottom: 2%;
+    width: 19%;
+    scale: 1.2;
 }
 
 
-/* --------------------------------- */
-/* Car 2: BMW Z1 (E30) Roadster 1989 */
-/* --------------------------------- */
+
+/* ▒▒▒▒▒▒▒▒▒▒ STYLING: CAR 2: Z1 (Roadster)             ▒▒▒▒▒▒▒▒▒▒ */
+
 
 ol li:nth-of-type(2) {
-  width: 100%;
+    width: 100%;
 }
 
 
 ol li:nth-of-type(2) button:hover {
-  filter: drop-shadow(0 0 .5em dodgerblue);
+    filter: drop-shadow(0 0 .5em var(--color-bmw-blue));
 }
 
 ol li:nth-of-type(2) button:active {
-  filter: drop-shadow(0 0 .5em var(--color-white));
+    filter: drop-shadow(0 0 .5em var(--color-white));
 }
 
 ol li:nth-of-type(2) button img:nth-of-type(1) {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 }
 
 ol li:nth-of-type(2) button img:nth-of-type(2) {
-  position: absolute;
-  left: 7.5%;
-  bottom: 1.5%;
-  width: 19%;
+    position: absolute;
+    left: 7.5%;
+    bottom: 1.5%;
+    width: 19%;
 }
 
 ol li:nth-of-type(2) button img:nth-of-type(3) {
-  position: absolute;
-  right: 8%;
-  bottom: 1.5%;
-  width: 19%;
+    position: absolute;
+    right: 8%;
+    bottom: 1.5%;
+    width: 19%;
 }
 
 
 
-/* ------------------------------------ */
-/* Car 3: BMW 3-Series (E46) Coupé 1997 */
-/* ------------------------------------ */
+/* ▒▒▒▒▒▒▒▒▒▒ STYLING: CAR 3: 3-Serie Coupé             ▒▒▒▒▒▒▒▒▒▒ */
+
 
 ol li:nth-of-type(3) {
-  width: 95%;
+    width: 95%;
 }
 
+
 ol li:nth-of-type(3) button:hover {
-  filter: drop-shadow(0 0 .5em dodgerblue);
+    filter: drop-shadow(0 0 .5em var(--color-bmw-blue));
 }
 
 ol li:nth-of-type(3) button:active {
-  filter: drop-shadow(0 0 .5em var(--color-white));
+    filter: drop-shadow(0 0 .5em var(--color-white));
 }
 
 ol li:nth-of-type(3) button img:nth-of-type(1) {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 }
 
 ol li:nth-of-type(3) button img:nth-of-type(2) {
-  position: absolute;
-  left: 12%;
-  bottom: 1%;
-  width: 19%;
-  scale: 1;
+    position: absolute;
+    left: 12%;
+    bottom: 1%;
+    width: 19%;
+    scale: 1;
 }
 
 ol li:nth-of-type(3) button img:nth-of-type(3) {
-  position: absolute;
-  right: 4.5%;
-  bottom: 0%;
-  width: 19%;
-  scale: 0.95;
+    position: absolute;
+    right: 4.5%;
+    bottom: 0%;
+    width: 19%;
+    scale: 0.95;
 }
 
 
 
+/* ▒▒▒▒▒▒▒▒▒▒ STYLING: CAR 4: 1-Serie Hatchback         ▒▒▒▒▒▒▒▒▒▒ */
 
-
-/* ----------------------------------------------- */
-/* Car 4: BMW 1-Series (E81) 3-door Hatchback 2007 */
-/* ----------------------------------------------- */
 
 ol li:nth-of-type(4) {
-  width: 90%;
+    width: 90%;
 }
 
+
 ol li:nth-of-type(4) button:hover {
-  filter: drop-shadow(0 0 .5em dodgerblue);
+    filter: drop-shadow(0 0 .5em var(--color-bmw-blue));
 }
 
 ol li:nth-of-type(4) button:active {
-  filter: drop-shadow(0 0 .5em var(--color-white));
+    filter: drop-shadow(0 0 .5em var(--color-white));
 }
 
 ol li:nth-of-type(4) button img:nth-of-type(1) {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 }
 
 ol li:nth-of-type(4) button img:nth-of-type(2) {
-  position: absolute;
-  left: 7.3%;
-  bottom: 0%;
-  width: 19%;
-  scale: 0.89;
+    position: absolute;
+    left: 7.3%;
+    bottom: 0%;
+    width: 19%;
+    scale: 0.89;
 }
 
 ol li:nth-of-type(4) button img:nth-of-type(3) {
-  position: absolute;
-  right: 5.7%;
-  bottom: 0%;
-  width: 19%;
-  scale: 0.89;
+    position: absolute;
+    right: 5.7%;
+    bottom: 0%;
+    width: 19%;
+    scale: 0.89;
 }
 
 
 
+/* ▒▒▒▒▒▒▒▒▒▒ STYLING: CAR 5: i8 (i12) Coupé            ▒▒▒▒▒▒▒▒▒▒ */
 
-
-/* ------------------------------ */
-/* Car 5: BMW i8 (I12) Coupé 2014 */
-/* ------------------------------ */
 
 ol li:nth-of-type(5) {
-  width: 100%;
+    width: 100%;
 }
 
 
 ol li:nth-of-type(5) button:hover {
-  filter: drop-shadow(0 0 .5em dodgerblue);
+    filter: drop-shadow(0 0 .5em var(--color-bmw-blue));
 }
 
 ol li:nth-of-type(5) button:active {
-  filter: drop-shadow(0 0 .5em var(--color-white));
+    filter: drop-shadow(0 0 .5em var(--color-white));
 }
 
 ol li:nth-of-type(5) button img:nth-of-type(1) {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 }
 
 ol li:nth-of-type(5) button img:nth-of-type(2) {
-  position: absolute;
-  left: 7%;
-  bottom: -1%;
-  width: 19%;
-  scale: 0.90;
+    position: absolute;
+    left: 7%;
+    bottom: -1%;
+    width: 19%;
+    scale: 0.90;
 }
 
 ol li:nth-of-type(5) button img:nth-of-type(3) {
-  position: absolute;
-  right: 8%;
-  bottom: -1%;
-  width: 19%;
-  scale: 0.90;
+    position: absolute;
+    right: 8%;
+    bottom: -1%;
+    width: 19%;
+    scale: 0.90;
 }
 
 
 
-/* ------------------------------------- */
-/* Car 6: BMW i4 M (I04) Liftback M 2021 */
-/* ------------------------------------- */
+/* ▒▒▒▒▒▒▒▒▒▒ STYLING: CAR 6: i4 M (I04) Liftback       ▒▒▒▒▒▒▒▒▒▒ */
+
 
 ol li:nth-of-type(6) {
-  width: 100%;
+    width: 100%;
 }
 
 
 ol li:nth-of-type(6) button:hover {
-  filter: drop-shadow(0 0 .5em dodgerblue);
+    filter: drop-shadow(0 0 .5em var(--color-bmw-blue));
 }
 
 ol li:nth-of-type(6) button:active {
-  filter: drop-shadow(0 0 .5em var(--color-white));
+    filter: drop-shadow(0 0 .5em var(--color-white));
 }
 
 ol li:nth-of-type(6) button img:nth-of-type(1) {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 }
 
 ol li:nth-of-type(6) button img:nth-of-type(2) {
-  position: absolute;
-  left: 10%;
-  bottom: 0%;
-  width: 19%;
-  scale: 0.9;
+    position: absolute;
+    left: 10%;
+    bottom: 0%;
+    width: 19%;
+    scale: 0.9;
 }
 
 ol li:nth-of-type(6) button img:nth-of-type(3) {
-  position: absolute;
-  right: 6%;
-  bottom: 0%;
-  width: 19%;
-  scale: 0.9;
+    position: absolute;
+    right: 6%;
+    bottom: 0%;
+    width: 19%;
+    scale: 0.9;
 }
 
 
 
 
 
-/* ---------------- */
-/* CAR ANIMATIONS   */
-/* ---------------- */
 
-ol li button {
-  animation-name:driving;
-  animation-duration:4s;
-  animation-iteration-count:infinite;
-  animation-timing-function:linear;
-  animation-play-state:paused; /* de animatie staat op pauze */
+/* ▒▒▒▒▒▒▒▒▒▒ ANIMATIONS (ACTIVATION)                   ▒▒▒▒▒▒▒▒▒▒ */
+
+
+ol li button.play {
+    animation-name: driving;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
+
+/* » Toelichting:
+/* - De animatie start pas als de class op de button wordt geplaatst; */
+/* - De animatie staat dus niet standaard (of alvast) op pauze; */
+/* - De animatie stopt helemaal als de class van button wordt verwijderd; */
+/* - De animatie heeft bij elke keer starten weer een delay. */
 
 ol li button.play img:nth-of-type(2),
 ol li button.play img:nth-of-type(3) {
-  animation-name:rotating;
-  animation-duration:1.25s;
-  animation-iteration-count:infinite;
-  animation-timing-function:linear;
-  /* animation-play-state:paused;  */
-  /* de animatie staat op pauze */
+    animation-name: rotating;
+    animation-duration: 1.25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
-/* Animation: car 1 */ 
+
+/* Animatie: CAR 1: Isetta                    */
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
+
 ol li:nth-of-type(1) button {
-  animation-delay: 2.2s;
+    animation-delay: 2.2s;
 }
 
 ol li:nth-of-type(1) button img:nth-of-type(2) {
-  animation-delay: 2.2s;
+    animation-delay: 2.2s;
 }
 
-/* Animation: car 2 */ 
+
+/* Animatie: CAR 2: Z1 (Roadster)             */
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
+
+
 ol li:nth-of-type(2) button {
-  animation-delay: 1.2s;
+    animation-delay: 1.2s;
 }
 
 ol li:nth-of-type(2) button img:nth-of-type(2),
 ol li:nth-of-type(2) button img:nth-of-type(3) {
-  animation-delay: 1.2s;
+    animation-delay: 1.2s;
 }
 
-/* Animation: car 3 */ 
+
+/* Animatie: CAR 3: 3-Serie Coupé             */
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
+
 ol li:nth-of-type(3) button {
-  animation-delay: 0.2s;
+    animation-delay: 0.2s;
 }
 
 ol li:nth-of-type(3) button img:nth-of-type(2),
 ol li:nth-of-type(3) button img:nth-of-type(3) {
-  animation-delay: 0.2s;
+    animation-delay: 0.2s;
 }
 
-/* Animation: car 4 */ 
+
+/* Animatie: CAR 4: 1-Serie Hatchback         */
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
+
 ol li:nth-of-type(4) button {
-  animation-delay: 2s;
+    animation-delay: 2s;
 }
 
 ol li:nth-of-type(4) button img:nth-of-type(2),
 ol li:nth-of-type(4) button img:nth-of-type(3) {
-  animation-delay: 2s;
+    animation-delay: 2s;
 }
 
-/* Animation: car 5 */ 
+
+/* Animatie: CAR 5: i8 (i12) Coupé            */
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
+
 ol li:nth-of-type(5) button {
-  animation-delay: 1s;
+    animation-delay: 1s;
 }
 
 ol li:nth-of-type(5) button img:nth-of-type(2),
 ol li:nth-of-type(5) button img:nth-of-type(3) {
-  animation-delay: 1s;
+    animation-delay: 1s;
 }
 
-/* Animation: car 6 */ 
+/* Animatie: CAR 6: i4 M (I04) Liftback       */
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
 ol li:nth-of-type(6) button {
-  animation-delay: 0s;
+    animation-delay: 0s;
 }
 
 ol li:nth-of-type(6) button img:nth-of-type(2),
 ol li:nth-of-type(6) button img:nth-of-type(3) {
-  animation-delay: 0s;
+    animation-delay: 0s;
 }
 
-/* Play animations */
-.play {
-  animation-play-state: running;
+
+
+
+
+
+/* ▒▒▒▒▒▒▒▒▒▒ ANIMATION STONE                           ▒▒▒▒▒▒▒▒▒▒ */
+
+
+.stone {
+    z-index: 1000;
+    display: inline-flex;
+    position: fixed;
+    margin-left: 47vw;
+    width: 15%;
+    display: none;
 }
 
+.vallen {
+    display: block;
+    animation: anim 2s ease-in-out;
+    transform: translateY(-100vh) rotate(0deg);
+}
+
+article:nth-of-type(2) section:nth-of-type(6) {
+    background-color: var(--color-road);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    border-radius: 1em 1em 1em 1em;
+    border: 1px solid var(--color-stroke);
+    padding: 1vw 1.5vw;
+    order: -1;
+}
+
+article:nth-of-type(2) section:nth-of-type(6) button {
+    padding: 0;
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+main article:nth-of-type(2) section:nth-of-type(6) button img:hover {
+    scale: 1.2;
+    transition: .5s;
+}
+
+main article:nth-of-type(2) section:nth-of-type(6) button.active img {
+    content: url("../images/random/eggCrack.svg");
+}
+
+ol li:nth-of-type(2) button img:nth-of-type(1).crash {
+    content: url("../images/random/car-broken.png");
+}
+
+
+
+
+
+
+/* ▒▒▒▒▒▒▒▒▒▒ ANIMATIONS (KEYFRAMES)                    ▒▒▒▒▒▒▒▒▒▒ */
+
+
+/* Animatie: Driving       */
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
 
 @keyframes driving {
-  0% {
-    margin-left: 0vw;
-  }
+    0% {
+        margin-left: 0vw;
+    }
 
-  50% {
-    margin-left: 100vw;
-    opacity: 1;
-  }
+    50% {
+        margin-left: 100vw;
+        opacity: 1;
+    }
 
-  51% {
-    margin-left: 100vw;
-    opacity: 0;
-  }
+    51% {
+        margin-left: 100vw;
+        opacity: 0;
+    }
 
-  59% {
-    margin-left: -100vw;
-    opacity: 0;
-  }
+    59% {
+        margin-left: -100vw;
+        opacity: 0;
+    }
 
-  60% {
-    margin-left: -100vw;
-    opacity: 1;
-  }
+    60% {
+        margin-left: -100vw;
+        opacity: 1;
+    }
 
 }
 
+/* Animatie: Rotating      */
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
+
+
 @keyframes rotating {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Animatie: Falling      */
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
+
+@keyframes anim {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 1;
+        transform: translateY(32vh) rotate(-360deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(32vh) rotate(-360deg);
+    }
 }

@@ -1,114 +1,173 @@
 <!doctype html>
 <html lang="nl">
 
+<!--▒▒▒▒▒▒▒▒▒▒ HEAD                               ▒▒▒▒▒▒▒▒▒▒-->
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="author" content="jouw naam">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="author" content="jouw naam">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>VIDii 2022/23 - Tijdlijn</title>
+    <title>BMW - Timeline</title>
 
-	<link href="styles/style.css" rel="stylesheet">
-	<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
-	<header>
-		<a href="index.html"><img src="./images/bmw_logo-22.svg" alt="Logo BMW 2022"></a>
-		<h1>BMW I3 // 2013</h1>
-	</header>
+<!--▒▒▒▒▒▒▒▒▒▒ BODY                               ▒▒▒▒▒▒▒▒▒▒-->
 
-	<main>
-		<!--Information-->
-		<article>
-			<!-- Play / Pause (text) -->
-			<section>
-				<h3>Moving cars</h3>
-				<p>Change traffic light</p>
+<body>
+    <!-- Logo & Title-->
+    <header>
+        <a href="index.html"><img src="./images/bmw_logo-22.svg" alt="Logo BMW 2022"></a>
+        <h1>BMW // Timeline</h1>
+    </header>
+
+    <!-- Vallende steen (haha) -->
+    <img class="stone" src="./images/random/stone.png" alt="Steen">
+
+    <main>
+        <article>
+            <h3 data-jaar="" data-soort=""></h3>
+            <h4></h4>
+
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </article>
+
+        <!--▒▒▒▒▒▒▒▒▒▒ ACTION PANNEL                                                     ▒▒▒▒▒▒▒▒▒▒-->
+        <article>
+
+            <!-- Play / Pause (text) -->
+
+            <section>
+                <h3>Moving cars</h3>
+                <p>Change traffic light</p>
+                <button>
+                    <img src="./images/icons/play.svg" alt="Play icoon">
+                </button>
+            </section>
+
+            <!-- Traffic Light (button)-->
+
+            <section>
+                <input type="radio" name="TrafficLight" id="Green" value="Green">
+                <label for="Green" aria-label="Green Light"></label>
+                <input type="radio" name="TrafficLight" id="Red" value="Red" checked>
+                <label for="Red" aria-label="Red Light"></label>
+            </section>
+
+            <section>
+                <button>
+                    <img src="./images/icons/headlight.svg" alt="Licht Icoon">
+                </button>
+            </section>
+
+            <section>
+                <button id="openDialog">
+                    <img src="./images/icons/flashlight_off.svg" alt="Knipperlicht Icoon">
+                </button>
+            </section>
+
+            <section>
+                <button>
+                    <img src="./images/icons/megaphone.svg" alt="Toeteren Icoon">
+                </button>
+            </section>
+
+            <section>
 				<button>
-					<img src="./images/icons/play.svg" alt="">
+					<img src="./images/random/egg.svg" alt="Eitje Icoon">
 				</button>
 			</section>
-			<!-- Traffic Light (button)-->
-			<section>
-				<!-- <button>start</button> -->
-				<input type="radio" name="TrafficLight" id="Green" value="Green">
-				<label for="Green" aria-label="Green Light"></label>
-				<!-- <button>stop</button> -->
-				<input type="radio" name="TrafficLight" id="Red" value="Red" checked>
-				<label for="Red" aria-label="Red Light"></label>
-			</section>
-		
-		</article>
 
-		<!--Cars-->
-		<section>
-			<ol>
-				<!-- Car 1: BMW Isetta 1-door Cabriolet 1955 -->
-				<li>
-					<button>
-						<img class="auto" src="./images/cars/1955 /1955-car.png" alt="">
-						<img src="./images/cars/1955 /1955-wheel-f.png" alt="">
-					</button>
-				</li>
-				<!-- Car 2: BMW Z1 (E30) Roadster 1989 -->
-				<li>
-					<button>
-						<img class="auto" src="./images/cars/1989/1989-car.png" alt="">
-						<img src="./images/cars/1989/1989-wheel-f.png" alt="">
-						<img src="./images/cars/1989/1989-wheel-b.png" alt="">
-					</button>
-				</li>
-				<!-- Car 3: BMW 3-Series (E46) Coupé 1997 -->
-				<li>
-					<button>
-						<img class="auto" src="./images/cars/1997/1997-car.png" alt="">
-						<img src="./images/cars/1997/1997-wheel-f.png" alt="">
-						<img src="./images/cars/1997/1997-wheel-b.png" alt="">
-					</button>
-				</li>
-				<!-- Car 4: BMW 1-Series (E81) 3-door Hatchback 2007 -->
-				<li>
-					<button>
-						<img class="auto" src="./images/cars/2007/2007-car.png" alt="">
-						<img src="./images/cars/2007/2007-wheel-f.png" alt="">
-						<img src="./images/cars/2007/2007-wheel-b.png" alt="">
-					</button>
-				</li>
-				<!-- Car 5: BMW i8 (I12) Coupé 2014 -->			
-				<li>
-					<button>
-						<img class="auto" src="./images/cars/2014/2014-car.png" alt="">
-						<img src="./images/cars/2014/2014-wheel-f.png" alt="">
-						<img src="./images/cars/2014/2014-wheel-b.png" alt="">
-					</button>
-				</li>
-				<!-- Car 6: BMW i4 M (I04) Liftback M 2021 -->
-				<li>
-					<button>
-						<img class="auto" src="./images/cars/2021/2021-car.png" alt="">
-						<img src="./images/cars/2021/2021-wheel-f.png" alt="">
-						<img src="./images/cars/2021/2021-wheel-b.png" alt="">
-					</button>
-				</li>
-			</ol>
-		</section>
-		<!-- de tijdlijn zelf is een ordered list -->
+            <dialog id="dialog">
+                <form>
+                    <h3>Wist je dat?</h3>
+                    <h4>BMW Rijders gebruiken geen knipperlicht, althans de meeste natuurlijk. Vandaar dat deze
+                        functionaliteit niet ingebouwd is.</h4>
+                    <button type="submit" autofocus value="yes">Begrepen</button>
+                </form>
+            </dialog>
 
-		<!-- elk list-item is een punt in tijd -->
-		<!-- 11 list-items om te starten -->
-		<!-- bepaal zelf hoeveel je er nodig hebt -->
+        </article>
 
-		<!-- in elk listitem staat nu een link -->
-		<!-- de link kun je vullen met jouw content -->
-		<!-- of in zijn geheel vervangen door jouw content -->
+        <!-- Cars -->
 
-	</main>
+        <section>
+            <ol>
+                <!-- CAR 1: Isetta -->
 
-	<script src="scripts/script.js"></script>
+                <li>
+                    <button>
+                        <img name="auto-1" class="auto" src="./images/cars/1955/1955-car.png" alt="">
+                        <img src="./images/cars/1955/1955-wheel-f.png" alt="">
+                    </button>
+                </li>
+
+                <!-- CAR 2: Z1 (Roadster) -->
+
+                <li>
+                    <button>
+                        <img name="auto-2" class="auto" src="./images/cars/1989/1989-car.png" alt="">
+                        <img src="./images/cars/1989/1989-wheel-f.png" alt="">
+                        <img src="./images/cars/1989/1989-wheel-b.png" alt="">
+                    </button>
+                </li>
+
+                <!-- CAR 3: 3-Serie Coupé -->
+
+                <li>
+                    <button>
+                        <img class="auto" src="./images/cars/1997/1997-car.png" alt="">
+                        <img src="./images/cars/1997/1997-wheel-f.png" alt="">
+                        <img src="./images/cars/1997/1997-wheel-b.png" alt="">
+                    </button>
+                </li>
+
+                <!-- CAR 4: 1-Serie Hatchback -->
+
+                <li>
+                    <button>
+                        <img class="auto" src="./images/cars/2007/2007-car.png" alt="">
+                        <img src="./images/cars/2007/2007-wheel-f.png" alt="">
+                        <img src="./images/cars/2007/2007-wheel-b.png" alt="">
+                    </button>
+                </li>
+
+                <!-- CAR 5: i8 (i12) Coupé -->
+
+                <li>
+                    <button>
+                        <img class="auto" src="./images/cars/2014/2014-car.png" alt="">
+                        <img src="./images/cars/2014/2014-wheel-f.png" alt="">
+                        <img src="./images/cars/2014/2014-wheel-b.png" alt="">
+                    </button>
+                </li>
+
+                <!-- CAR 6: i4 M (I04) Liftback -->
+
+                <li>
+                    <button>
+                        <img class="auto" src="./images/cars/2021/2021-car.png" alt="">
+                        <img src="./images/cars/2021/2021-wheel-f.png" alt="">
+                        <img src="./images/cars/2021/2021-wheel-b.png" alt="">
+                    </button>
+                </li>
+
+            </ol>
+        </section>
+
+    </main>
+
+    <script src="script/script.js"></script>
 </body>
 
 </html>

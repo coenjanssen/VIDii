@@ -1,12 +1,4 @@
 # Procesverslag
-Markdown is een simpele manier om HTML te schrijven.  
-Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
-
-Nb. De standaardstructuur en de spartaanse opmaak van de README.md zijn helemaal prima. Het gaat om de inhoud van je procesverslag. Besteedt de tijd voor pracht en praal aan je website.
-
-Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard open zetten. Fijn om dat steeds voor de relevante stuk(ken) te doen.
-
-
 
 
 ## Jij
@@ -48,34 +40,34 @@ Mijn startniveau voor de opstart van de website is in eerste instantie blauw, di
   #### Design 1:
   <img src="readme-images/versie1.png" width="375px" alt="Eerste digitale uitwerking">
   
-  ##### Om een beter beeld te krijger hoe de website eruit komt te zien, heb ik de schets ook digitaal gemaakt. 
+  Om een beter beeld te krijger hoe de website eruit komt te zien, heb ik de schets ook digitaal gemaakt. 
 
   #### Testen:
   <img src="readme-images/test.png" width="375px" alt="Testen in CodePen">
   
-  ##### Het idee is helder, maar gaat het mij lukken om alles werkend te krijgen - zoals ik het in gedachten heb? Hiervoor ben ik eerst gaan testen in Codepen.
+  Het idee is helder, maar gaat het mij lukken om alles werkend te krijgen - zoals ik het in gedachten heb? Hiervoor ben ik eerst gaan testen in Codepen.
 
   #### Design 2:
   <img src="readme-images/versie2.png" width="375px" alt="Tweede digitale uitwerking">
   
-  ##### Ik was wat aan het stoeien met de stijl: de auto's zijn realistisch de achtegrond wat cartoonish, dit botst teveel vond ik. Hier heb ik een kleine aanpassing gedaan om de weg wat realitscher te maken.
+  Ik was wat aan het stoeien met de stijl: de auto's zijn realistisch de achtegrond wat cartoonish, dit botst teveel vond ik. Hier heb ik een kleine aanpassing gedaan om de weg wat realitscher te maken.
 
   #### Design 3A (Light):
   <img src="readme-images/versie3-light.png" width="375px" alt="Ontwerp in lightmode (schets / wireframe)">
   
   
-  ##### Terug naar de tekentafel om het ontwerp simpeler te maken, hierbij heb ik rekening gehouden met de eenvoud om zowel voor light- als darkmode te kunnen ontwerpen. De simpelheid is gebaseerd om de minimalistische en schone showrooms van de autodealer.
+  Terug naar de tekentafel om het ontwerp simpeler te maken, hierbij heb ik rekening gehouden met de eenvoud om zowel voor light- als darkmode te kunnen ontwerpen. De simpelheid is gebaseerd om de minimalistische en schone showrooms van de autodealer.
   
 
   #### Design 3B (Dark):
   <img src="readme-images/versie3-dark.png" width="375px" alt="Ontwerp in darkmode (schets / wireframe)">
 
-  ##### Naast de light-mode werkt de website ook met een donkere modus aan.
+  Naast de light-mode werkt de website ook met een donkere modus aan.
 
   #### Clean up!:
   <img src="readme-images/clean-up.png" width="375px" alt="Opschonen van de code">
 
-  ##### Aan het eind ben ik de code gaan opschonen en het overzichtelijk maken van alle code.
+  Aan het eind ben ik de code gaan opschonen en het overzichtelijk maken van alle code.
 
 </details>
 
@@ -197,15 +189,6 @@ Mijn startniveau voor de opstart van de website is in eerste instantie blauw, di
   #### oplossing:
   De tijd laat het misschien niet helemaal toe om alles te doen wat ik wilde doen qua interacties, ook omdat sommige code soms nog wat lastig was en wat meer tijd in beslag nam dan gepland. Het principe van JavaScript om afbeeldingen te replacen bij een button klik (interactie) ken ik, dit zou ik op het laatste moment nog kunnen toepassen voor het logo.
 
-  ### Bevinding 4:
-
-  #### oplossing: 
-
-
-  ### Bevinding 5:
-
-  #### oplossing:
-
 </details>
 
 
@@ -216,20 +199,35 @@ Mijn startniveau voor de opstart van de website is in eerste instantie blauw, di
 <details>
   <summary>Mijn eindresultaat & persoonlijke ontwikkeling</summary>
 
+  Het is leuk om zo weer eens even bezig te zijn geweest met code zoals HTML, CSS en JS. Het was bij mij allemaal al ver weggezakt gezien dit niet iets is wat ik zelf dagelijks doe. Van een eerste idee, met een aantal iteraties daarop, is het uiteindelijk een leuk resultaat geworden. In het begin dacht op het gebied van mijn concept: waar ben ik aan begonnen? Zeker nadat ik veel had probeerd om het stoplicht werkend te krijgen. Uiteindelijk is dit met hulp gelukt, wat natuurlijk het show-element van de website is geworden. Het aantal minimale interacties die je nog uit kunt voeren op de website is ook leuk geworden, ik wilde liever gaan voor kwaliteit dan kwantiteit dat is goed gelukt(*).
+
+  (* = Behalve de vallende steen, die moest er gewoon last-minute nog in.)
+
   ### Je uitkomst - karakteristiek screenshot(s):
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="final ontwerp">
+  <img src="readme-images/result-light.png" width="375px" alt="final ontwerp (lightmode)">
+  <img src="readme-images/result-dark.png" width="375px" alt="final ontwerp (darkmode)">
 
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatje(s)
+  
+  Ik heb over het algemeen weer de basis HTML, CSS en JS goed opgefrist. Daarnaast heb ik leren werken met VH, WH en EM. Dit is iets wat ik voorheen nog altijd met pixels deed en de reden waarom ik altijd moeite had met het responsive maken van de pagina. Ook flexbox en grid zijn nu redelijk duidelijk voor mij wat me zeker helpt met volgende projecten. Een nieuw element is het dialog popup maken, wat iets nieuws was voor mij - en ook nog eens direct goed werkte. Al met al veel geleerd en het was stiekem nog best leuk ook.
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
+  <img src="readme-images/drivingcars.png" width="375px" alt="Auto's laten rijden">
+  <img src="readme-images/drivingcars.png" width="375px" alt="Dialog popup maken">
 
 
   ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatje(s)
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
+  Wat vond ik niet lastig? Bijna alles wel. Telkens probeerde ik het zelf een keer op 5, dan googlen, dan vragen aan een klasgenoot. Als dat niet lukte, vinger de lucht in en het vragen aan Sanne. Soms was dit samen wel even puzzelen, maar alles wat ik in de les 'opgelost' wilde hebben is allemaal goed gelukt. De lessen heb ik goed benut om aan de website te werken en daarmee heb ik een mooi resultaat neergezet. Wat helaas niet gelukt is, is om een echt grappige easter-egg toe te voegen; de vallende steen (matig uitgewerkt helaas), het veranderen van de BMW logo's en eventueel een extra afbeelding bij de informatie tonen van elke auto. 
+
+  <img src="readme-images/nietgelukt.png" width="375px" alt="bummer">
+
+  ### Kortom:
+
+  Super leuke en nuttige lessen om je code-kennis weer op te frissen en de knutselen met CSS en JS. Helaas qua tijd wat aan de korte kant (1,5 a 2 weken), dit had wel wat langer gemogen. Zo zou ik dit vak zelf graag gecombineerd zien worden met een vormgevingsvak (schets > wireframe > UI Design > Coderen). 
+
+  Bedankt Sanne!
+
 </details>
 
 
@@ -240,10 +238,21 @@ Mijn startniveau voor de opstart van de website is in eerste instantie blauw, di
 <details open>
 <summary>continu bijhouden terwijl je werkt</summary>
 
-Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
-
-1. bron 1
-2. bron 2
-3. ...
+1. Wikipedia auto 1: https://nl.wikipedia.org/wiki/Isetta 
+2. Wikipedia auto 2: https://nl.wikipedia.org/wiki/BMW_Z1 
+3. Wikipedia auto 3: https://nl.wikipedia.org/wiki/BMW_E46 
+4. Wikipedia auto 4: https://nl.wikipedia.org/wiki/BMW_1-serie 
+5. Wikipedia auto 5: https://nl.wikipedia.org/wiki/BMW_i8 
+6. Wikipedia auto 6: https://nl.m.wikipedia.org/wiki/BMW_4-serie#i4 
+7. Informatie auto's: https://www.autoevolution.com/cars/bmw-3-series-sedan-2018.html#aeng_bmw-3-series-sedan-g20-2018-320i-8at-184-hp 
+8. Afbeeldingen: https://www.carsized.com/en/cars/compare/bmw-isetta-1955-1-door-cabriolet-vs-bmw-i3-2013-5-door-hatchback/ 
+9. Flexbox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+10. Grid: https://css-tricks.com/snippets/css/complete-guide-grid/
+11. Joost tijdens de les!
+12. Sanne tijdens de les! 
+13. Animsta: https://animista.net/ 
+14. Filters: https://stackoverflow.com/questions/22252472/how-to-change-the-color-of-an-svg-element
+15. Darkmode: https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/ 
+16. Vallende steen: https://1stwebdesigner.com/14-css-animations-for-fall/ 
 
 </details>
